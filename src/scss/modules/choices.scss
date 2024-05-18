@@ -1,0 +1,10 @@
+@use '../variables' as *;
+
+.choices {
+
+    &___btn {}
+
+    &__box {
+        display: none;
+    }
+}
