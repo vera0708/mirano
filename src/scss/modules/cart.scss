@@ -2,13 +2,47 @@
 @use '../media' as *;
 
 .cart {
+    align-self: start;
     padding-top: 100px;
+    display: none;
+
+    &_open {
+        display: flex;
+    }
+
+    @media (max-width: 1360px) {
+        padding: 0;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        height: 100vh;
+    }
+
+    @include mobile {
+        height: auto;
+        right: 14px;
+    }
 
     &__container {
         border-radius: 32px;
         padding: 24px 16px;
         max-width: 310px;
         background-color: $white;
+        min-height: 778px;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: 1360px) {
+            height: 100%;
+        }
+
+        @include mobile {
+            min-height: auto;
+            max-width: 292px;
+        }
     }
 
     &__header {
@@ -31,47 +65,98 @@
         background-repeat: no-repeat;
         font-weight: 400;
         font-size: 14px;
-        padding-bottom: 16px;
+        margin-bottom: 16px;
 
         @include mobile {
             font-size: 12px;
         }
     }
 
-    &__list {}
+    &__list {
+        margin-bottom: 24px;
+        flex-grow: 1;
+    }
 
     &__item {
         padding: 16px 0;
         border-bottom: 1px solid rgba($dark, .04);
         display: grid;
         grid-template-columns: 54px 1fr min-content;
-        gap:  8px 12px;
-        grid-template-areas: 
-        'image title title'
-        'image counter price';
+        gap: 8px 12px;
+        align-items: center;
+        grid-template-areas:
+            'image title title'
+            'image counter price';
+
+        &:last-child {
+            border-bottom-color: transparent;
+        }
     }
 
     &__img {
+        align-self: start;
         grid-area: image;
+        width: 54px;
+        height: 54px;
+        border-radius: 12px;
+        object-fit: cover;
     }
 
     &__item-title {
         grid-area: title;
+        font-weight: 400;
+        font-size: 14px;
     }
 
     &__counter {
         grid-area: counter;
+        display: flex;
+        gap: 4px;
     }
 
-    &__counter-btn {}
+    &__counter-btn {
+        width: 29px;
+        height: 29px;
+        border-radius: 6px;
+        background-color: $bg;
+        font-size: 14px;
+    }
 
-    &__counter-input {}
+    &__counter-input {
+        font-size: 14px;
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        text-align: center;
+        width: 22px;
+        outline: 1px solid transparent;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+
+        &:focus-visible {
+            outline-color: $green;
+            border-radius: 3px;
+        }
+    }
 
     &__price {
         grid-area: price;
     }
 
-    &__footer {}
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-    &__order-btn {}
+    &__order-btn {
+        background-color: $light-orange;
+        border-radius: 32px;
+        padding: 9px 16px 8px 16px;
+        color: $white;
+    }
 }
