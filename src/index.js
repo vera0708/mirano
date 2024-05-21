@@ -1,24 +1,5 @@
 import '@/scss/index.scss';
-
-const header = document.querySelector('.header');
-const body = document.body;
-
-let headerHeight = header.offsetHeight;
-
-window.addEventListener('resize', () => {
-  headerHeight = header.offsetHeight;
-});
-
-window.addEventListener('scroll', () => {
-  const scrollDistance = window.scrollY;
-  if (scrollDistance > 200) {
-    header.classList.add('header_fixed');
-    body.style.paddingTop = `${headerHeight}px`;
-  } else {
-    header.classList.remove('header_fixed');
-    body.style.paddingTop = '0';
-  }
-});
+import {initHeaderFixer} from '@/scripts/headerFixer';
 
 const adjustElementPosition = (element, count = 0) => {
   const rect = element.getBoundingClientRect();
@@ -85,4 +66,11 @@ headerCartButton.addEventListener('click', () => {
 cartClose.addEventListener('click', () => {
   cart.classList.remove('cart_open');
 });
+
+const init = () => {
+  initHeaderFixer();
+};
+
+// init();
+document.addEventListener('DOMContentLoaded', init)
 
