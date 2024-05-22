@@ -5,7 +5,6 @@ export const initChoicesType = () => {
     
     const updateTypeChoicesVisibility = () => {
         const category = store.getCategories();
-        console.log('category: ', category)
 
         if (category.size) {
             typeChoices.style.display = '';

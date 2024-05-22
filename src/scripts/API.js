@@ -1,9 +1,4 @@
 import { store } from "./Store";
-/*
-/api/products?type=bouquets
-/api/products?type=toys
-/api/products?type=postcards
-*/
 
 const formatQueryString = (params) => {
     if (Object.keys(params).length === 0) {

@@ -10,7 +10,6 @@ class Store {
     }
 
     notifyObservers() {
-        console.log(this);
         this.observers.forEach((observer) => observer());
     }
 

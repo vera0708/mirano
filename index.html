@@ -69,54 +69,64 @@
 
     <section class="filter">
       <h2 class="visually-hidden"></h2>
-      <div class="container filter__container">
-        <fieldset class="filter__group">
-          <input class="filter__radio" type="radio" name="type" id="flower" value="flower" checked>
-          <label class="filter__label filter__label_flower" for="flower">Цветы</label>
+      <div class="container">
+        <form class="filter__form">
+          <fieldset class="filter__group">
+              <input class="filter__radio" type="radio" name="type" id="flower" value="bouquets" checked>
+              <label class="filter__label filter__label_flower" for="flower">Цветы</label>
 
-          <input class="filter__radio" type="radio" name="type" id="toys" value="toys">
-          <label class="filter__label filter__label_toy" for="toys">Игрушки</label>
+              <input class="filter__radio" type="radio" name="type" id="toys" value="toys">
+              <label class="filter__label filter__label_toy" for="toys">Игрушки</label>
 
-          <input class="filter__radio" type="radio" name="type" id="postcards" value="postcards">
-          <label class="filter__label filter__label_postcard" for="postcards">Открытки</label>
-        </fieldset>
+            <input class="filter__radio" type="radio" name="type" id="postcards" value="postcards">
+            <label class="filter__label filter__label_postcard" for="postcards">Открытки</label>
+          </fieldset>
 
-        <fieldset class="filter__group filter__group_choices">
-          <div class="filter__choices choices">
-            <button class="filter__select choices__btn">Цена</button>
+          <fieldset class="filter__group filter__group_choices">
+            <div class="filter__choices choices">
+              <button 
+                  class="filter__select choices__btn"
+                  type="button"
+                  >Цена
+              </button>
 
-            <div class="choices__box filter__choices-box">
+              <div class="choices__box filter__choices-box">
               <fieldset class="filter__price">
                 <input type="text" class="filter__input-price" placeholder="от">
                 <input type="text" class="filter__input-price" placeholder="до">
               </fieldset>
+              </div>
             </div>
-          </div>
 
-          <div class="filter__choices filter__choices_type choices">
-            <button class="filter__select choices__btn">Тип товара</button>
+            <div class="filter__choices filter__choices_type choices">
+              <button 
+                class="filter__select choices__btn"
+                type="button"
+                >Тип товара
+              </button>
 
             <div class="choices__box filter__choices-box filter__choices-box_type">
               <ul class="filter__type-list">
                 <li class="filter__type-item">
-                  <button class="filter__type-button">Монобукеты</button>
+                  <button class="filter__type-button" type="button">Монобукеты</button>
                 </li>
                 <li class="filter__type-item">
-                  <button class="filter__type-button">Авторские букеты</button>
+                  <button class="filter__type-button" type="button">Авторские букеты</button>
                 </li>
                 <li class="filter__type-item">
-                  <button class="filter__type-button">Цветы в коробке</button>
+                  <button class="filter__type-button" type="button">Цветы в коробке</button>
                 </li>
                 <li class="filter__type-item">
-                  <button class="filter__type-button">Цветы в корзине</button>
+                  <button class="filter__type-button" type="button">Цветы в корзине</button>
                 </li>
                 <li class="filter__type-item">
-                  <button class="filter__type-button">Букеты из сухоцветов</button>
+                  <button class="filter__type-button" type="button">Букеты из сухоцветов</button>
                 </li>
               </ul>
             </div>
-          </div>
-        </fieldset>
+            </div>
+          </fieldset>
+        </form>
       </div>
     </section>
 
