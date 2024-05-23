@@ -29,7 +29,6 @@ class Store {
 
     updateCategories(products) {
         this.categories.clear();
-        console.log('products: ', products)
 
         products.forEach((product) => {
             if (product.categories) {

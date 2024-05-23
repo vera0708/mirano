@@ -49,7 +49,11 @@
        }
     }
 
-    &__item {}
-
-    &__card {}
-   }
+    .goods__no-product {
+        text-align: center;
+        font-size: 28px;
+        color: $orange;
+        grid-column: 1 / -1;
+        font-family: $second-family;
+    }
+}

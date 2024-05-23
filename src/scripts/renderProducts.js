@@ -8,10 +8,17 @@ export const renderProducts = async () => {
         const products = store.getProducts();
         goodsList.innerHTML = '';
 
-        products.forEach(product => {
+        if (!products.length) {
+            const messageItem = document.createElement('li');
+            messageItem.textContent = 'Товары не найдены';
+            messageItem.classList.add('goods__no-product');
+            goodsList.append(messageItem);
+        } else {
+            products.forEach(product => {
             const productCard = ProductCard(product);
             goodsList.append(productCard);
-        });
+            });
+        }
     };
     // console.log('data: ', products);
     store.subscribe(updateList);
