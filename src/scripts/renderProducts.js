@@ -20,7 +20,7 @@ export const renderProducts = async () => {
             });
         }
     };
-    // console.log('data: ', products);
+
     store.subscribe(updateList);
     updateList();
 };
