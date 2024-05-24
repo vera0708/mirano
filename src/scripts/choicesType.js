@@ -1,12 +1,12 @@
 import { ListType } from "./ListType";
-import { store } from "./Store";
+import { productStore } from "./Store";
 
 export const initChoicesType = () => {
     const typeChoices = document.querySelector('.filter__choices_type');
     const choicesBox = document.querySelector('.filter__choices-box_type');
     
     const updateTypeChoicesVisibility = () => {
-        const categories = store.getCategories();
+        const categories = productStore.getCategories();
 
         if (categories.size) {
             typeChoices.style.display = '';
@@ -17,7 +17,7 @@ export const initChoicesType = () => {
             typeChoices.style.display = 'none';
         }
     };
-        store.subscribe(updateTypeChoicesVisibility);
+        productStore.subscribe(updateTypeChoicesVisibility);
 
         updateTypeChoicesVisibility();
 };
