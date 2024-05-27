@@ -13,7 +13,7 @@ const formatQueryString = (params) => {
 };
 
 // export const API_URL = 'http://localhost:3000';
-export const API_URL = 'https://befitting-spotted-attraction.glitch.me';
+export const API_URL = 'https://mirano-api-nmky.onrender.com';
 
 export const fetchProducts = async (params = {}) => {
     try {
