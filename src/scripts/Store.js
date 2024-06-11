@@ -20,6 +20,7 @@ class ProductStore extends Store {
         this.products = [];
         this.categories = new Set();
     }
+    
     getProducts() {
         return this.products;
     }
